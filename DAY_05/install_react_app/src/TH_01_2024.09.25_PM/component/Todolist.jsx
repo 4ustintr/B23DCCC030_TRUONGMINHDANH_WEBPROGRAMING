@@ -1,19 +1,25 @@
-import ToDoItem from "../component/Todoitem";
- import { PlusCircleOutlined } from '@ant-design/icons'
 
-const ToDoList = () => {
+import Todoitem from './Todoitem';
+import { EditOutlined, DeleteOutlined, PlusCircleOutlined } from '@ant-design/icons';
+
+
+const handleChange = () => {
+    
+}
+
+function ToDoList() {
     return (
-        <div className="ToDoList" style={{ marginLeft: '10px' }}>
+        <div className='ToDoList' style={{marginLeft: '10px' }}>
             <h1>My work 🎯</h1>
             <div>
-                <ToDoItem title="Gửi email nộp bài tập về nhà" dueDate="Hôm nay"></ToDoItem>
-                <ToDoItem title="Học từ vựng tiếng anh mỗi ngày" dueDate="Ngày mai"></ToDoItem>
-                <ToDoItem title="Viết tiểu luận môn Triết học" dueDate="Tuần tới"></ToDoItem>
+                <Todoitem title='Gửi email cho tôi' dueDate='today'></Todoitem>
+                <Todoitem title='làm bài tập về nhà' dueDate='tomorow'></Todoitem>
             </div>
             <div style={{ marginTop: '5px' }}>
-                <PlusCircleOutlined style={{ fontSize: '20px', color: '#d1453b' }} /> Add Task
+                <PlusCircleOutlined style={{ fontSize: '20px', color: '#d1453b' }} onClick = {handleChange} /> Add Task
             </div>
         </div>
-    )
+    );
 }
+
 export default ToDoList;
