@@ -33,26 +33,26 @@ function App() {
     { id: 3, text: 'Học từ vựng tiếng anh mỗi ngày', status: 'Monday' },
     { id: 4, text: 'Viết tiểu luận môn Triết học', status: 'Today' },
   ]);
-
   const [newTaskText, setNewTaskText] = useState('');
 
   const handleAddTask = () => {
-    if (newTaskText.trim() === '') return;
-    setTasks([...tasks, { id: Date.now(), text: newTaskText, status: 'Todo' }]);
+    if (!newTaskText) return;
+    setTasks([...tasks, { id:tasks.length + 1, text: newTaskText,status: 'Today'}]);
     setNewTaskText('');
   };
 
   const handleDeleteTask = (taskId) => {
-    setTasks(tasks.filter((task) => task.id !== taskId));
-  };
+    setTasks(tasks.filter((task) => task.id != taskId));
+  }
 
   const handleToggleStatus = (taskId) => {
     setTasks(
       tasks.map((task) =>
-        task.id === taskId ? { ...task, status: task.status === 'Todo' ? 'Done' : 'Todo' } : task
+        task.id === taskId ? { ...task, status: task.status === 'Done' ? 'Today' : 'Done' } : task
       )
     );
-  };
+  }
+  
 
   return (
     <div>
