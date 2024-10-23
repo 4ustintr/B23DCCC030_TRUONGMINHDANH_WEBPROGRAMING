@@ -10,7 +10,7 @@ function ToDoItem(props) {
             <input type='CheckBox'></input>
             <div className='itemContent'>
                 <h3>{props.title}</h3>
-                <p>{props.dueDate}</p>
+                <h4>{props.dueDate}</h4>
             </div>
             <div className='Action'>
                 <EditOutlined />
